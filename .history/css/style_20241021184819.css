@@ -1,0 +1,46 @@
+@charset "UTF-8";
+html {/*初期値の定義*/
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #fff;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+header {
+  background-color: #aaa;
+  width: 100%;
+  height: auto;
+}
+.separete-content {
+  display: flex;
+  justify-content: space-between;
+}
+.header-content {
+  height: auto;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.ex-site-link {
+  margin-right: calc(10vw * 0.5 + 20px);
+  text-align: right;
+}
+#empty-header-content {
+  height: 100%;
+}
+.title {
+  width: 150px;
+  height: 88px;
+}
+svg {
+  transform-origin: top left;
+  transform: scale(0.5);
+  padding-top: 2%;
+}
+g {
+    fill: #FFF;
+}
