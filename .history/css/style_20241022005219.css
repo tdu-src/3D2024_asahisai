@@ -104,8 +104,6 @@ main {
   height: 40vh;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  padding: 20px 0;
 }
 .char-image {
   width: calc(100% / 8);
@@ -133,6 +131,24 @@ main {
   height: 100%;
   object-fit: cover;
   position: absolute;
+}
+#Scout > img {
+  object-position: 50% 50%;
+}
+#Nere > img {
+  object-position: 50% 50%;
+}
+#Fuko > img {
+  object-position: 60% 50%;
+}
+#Wakatsuki > img {
+  object-position: 50% 50%;
+}
+#Tsukuri > img {
+  object-position: 43% 50%;
+}
+#Serif > img {
+  object-position: 50% 50%;
 }
 #Isago > img {
   object-position: 50% 50%;
@@ -193,136 +209,21 @@ a:hover {
   }
   100% {
     transform: translateY(100%);
-    opacity: 1;
-  }
-}
-@keyframes slideAnime3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
   }
 }
 #Scout > img:nth-of-type(1){
   animation-name: slideAnime1;
-  animation-duration: 20s;
+  animation-duration: 15s;
   animation-iteration-count: infinite;
   animation-delay: 0s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 }
 #Scout > img:nth-of-type(2) {
-  object-position: 50% 50%;
-  filter: drop-shadow(3px 3px 3px #000);
-  opacity: 0;
   animation-name: slideAnime2;
-  animation-duration: 20s;
+  animation-duration: 15s;
   animation-iteration-count: infinite;
-  animation-delay: 0s;
+  animation-delay: 9ms;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Nere > img:nth-of-type(1){
-  animation-name: slideAnime1;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Nere > img:nth-of-type(2) {
-  object-position: 50% 50%;
-  filter: drop-shadow(3px 3px 3px #000);
-  opacity: 0;
-  animation-name: slideAnime2;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Fuko > img:nth-of-type(1){
-  animation-name: slideAnime1;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Fuko > img:nth-of-type(2) {
-  object-position: 60% 50%;
-  filter: drop-shadow(3px 3px 3px #000);
-  opacity: 0;
-  animation-name: slideAnime2;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Wakatsuki > img:nth-of-type(1){
-  animation-name: slideAnime1;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Wakatsuki > img:nth-of-type(2) {
-  object-position: 50% 50%;
-  filter: drop-shadow(3px 3px 3px #000);
-  opacity: 0;
-  animation-name: slideAnime2;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.3s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Tsukuri > img:nth-of-type(1){
-  animation-name: slideAnime1;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.4s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Tsukuri > img:nth-of-type(2) {
-  object-position: 43% 50%;
-  filter: drop-shadow(3px 3px 3px #000);
-  opacity: 0;
-  animation-name: slideAnime2;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.4s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Serif > img:nth-of-type(1){
-  animation-name: slideAnime1;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Serif > img:nth-of-type(2) {
-  object-position: 50% 50%;
-  filter: drop-shadow(3px 3px 3px #000);
-  opacity: 0;
-  animation-name: slideAnime2;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-.char-image:hover {
-  animation-name: slideAnime3;
-  animation-duration: 0.2s;
-  animation-iteration-count: 1;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 }

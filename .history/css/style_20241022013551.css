@@ -134,6 +134,16 @@ main {
   object-fit: cover;
   position: absolute;
 }
+#Nere > img {
+}
+#Fuko > img {
+}
+#Wakatsuki > img {
+}
+#Tsukuri > img {
+}
+#Serif > img {
+}
 #Isago > img {
   object-position: 50% 50%;
 }

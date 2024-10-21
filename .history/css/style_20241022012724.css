@@ -134,6 +134,24 @@ main {
   object-fit: cover;
   position: absolute;
 }
+#Scout > img {
+  object-position: 50% 50%;
+}
+#Nere > img {
+  object-position: 50% 50%;
+}
+#Fuko > img {
+  object-position: 60% 50%;
+}
+#Wakatsuki > img {
+  object-position: 50% 50%;
+}
+#Tsukuri > img {
+  object-position: 43% 50%;
+}
+#Serif > img {
+  object-position: 50% 50%;
+}
 #Isago > img {
   object-position: 50% 50%;
 }
@@ -213,7 +231,6 @@ a:hover {
   animation-timing-function: ease-in-out;
 }
 #Scout > img:nth-of-type(2) {
-  object-position: 50% 50%;
   filter: drop-shadow(3px 3px 3px #000);
   opacity: 0;
   animation-name: slideAnime2;
@@ -232,7 +249,6 @@ a:hover {
   animation-timing-function: ease-in-out;
 }
 #Nere > img:nth-of-type(2) {
-  object-position: 50% 50%;
   filter: drop-shadow(3px 3px 3px #000);
   opacity: 0;
   animation-name: slideAnime2;
@@ -251,7 +267,6 @@ a:hover {
   animation-timing-function: ease-in-out;
 }
 #Fuko > img:nth-of-type(2) {
-  object-position: 60% 50%;
   filter: drop-shadow(3px 3px 3px #000);
   opacity: 0;
   animation-name: slideAnime2;
@@ -270,7 +285,6 @@ a:hover {
   animation-timing-function: ease-in-out;
 }
 #Wakatsuki > img:nth-of-type(2) {
-  object-position: 50% 50%;
   filter: drop-shadow(3px 3px 3px #000);
   opacity: 0;
   animation-name: slideAnime2;
@@ -289,32 +303,12 @@ a:hover {
   animation-timing-function: ease-in-out;
 }
 #Tsukuri > img:nth-of-type(2) {
-  object-position: 43% 50%;
   filter: drop-shadow(3px 3px 3px #000);
   opacity: 0;
   animation-name: slideAnime2;
   animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-delay: 0.4s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Serif > img:nth-of-type(1){
-  animation-name: slideAnime1;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-#Serif > img:nth-of-type(2) {
-  object-position: 50% 50%;
-  filter: drop-shadow(3px 3px 3px #000);
-  opacity: 0;
-  animation-name: slideAnime2;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.5s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
