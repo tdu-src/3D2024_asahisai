@@ -35,7 +35,7 @@ header {
 #empty-header-content {
   height: 100%;
 }
-.src-icon {
+svg {
   width: 150px;
   height: 88px;
   padding-top: 13%;
@@ -53,26 +53,9 @@ footer {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: space-around;
 }
 .footer-content {
   display: inline-block;
   width: 100%;
-  text-align: center;
-}
-#cpyright {
-  margin-top: 15px;
-}
-.sns-links {
-  display: flex;
-  justify-content: center;
-}
-.sns-icon {
-  width: 25px;
-  height: 25px;
-}
-#mid-icon {
-  width: 28px;
-  height: 28px;
-  margin: 0 4vw;
 }
