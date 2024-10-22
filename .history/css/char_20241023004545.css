@@ -92,9 +92,12 @@ main {
 section {
   margin: 0 20vw;
 }
-#download-image {
+#Scout-image {
   display: block;
   align-items: center;
+}
+#Scout-image > img {
+  object-fit: cover;
 }
 .big-height {
   width: auto;

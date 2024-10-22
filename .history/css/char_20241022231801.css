@@ -92,17 +92,13 @@ main {
 section {
   margin: 0 20vw;
 }
-#download-image {
-  display: block;
-  align-items: center;
+#Scout-image {
+  object-position: 50% 50%;
 }
-.big-height {
+img {
   width: auto;
   height: 100%;
-}
-.big-width {
-  width: 100%;
-  height: auto;
+  object-fit: cover;
 }
 .block {
   width: calc(100% - 40vw);
@@ -115,7 +111,6 @@ section {
 }
 .block-content {
   display: flex;
-  margin-top: 5vh;
 }
 .block-content > div {
   position: relative;
@@ -126,11 +121,10 @@ section {
 }
 .block-content > div > img {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .block-content > div > div {
   position: absolute;
@@ -138,9 +132,6 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
-}
-.block-content > div > h3 {
-  text-align: justify;
 }
 .wrapper {
   display: inline;

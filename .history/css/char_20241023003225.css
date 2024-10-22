@@ -92,17 +92,19 @@ main {
 section {
   margin: 0 20vw;
 }
-#download-image {
+#Scout-image {
   display: block;
   align-items: center;
 }
 .big-height {
   width: auto;
   height: 100%;
+  object-fit: contain;
 }
-.big-width {
+.big-height {
   width: 100%;
   height: auto;
+  object-fit: contain;
 }
 .block {
   width: calc(100% - 40vw);

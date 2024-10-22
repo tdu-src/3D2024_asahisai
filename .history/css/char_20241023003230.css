@@ -92,7 +92,7 @@ main {
 section {
   margin: 0 20vw;
 }
-#download-image {
+#Scout-image {
   display: block;
   align-items: center;
 }
@@ -100,7 +100,7 @@ section {
   width: auto;
   height: 100%;
 }
-.big-width {
+.big-height {
   width: 100%;
   height: auto;
 }

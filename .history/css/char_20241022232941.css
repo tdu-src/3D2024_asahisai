@@ -92,17 +92,14 @@ main {
 section {
   margin: 0 20vw;
 }
-#download-image {
+#Scout-image {
   display: block;
   align-items: center;
 }
-.big-height {
+img {
   width: auto;
   height: 100%;
-}
-.big-width {
-  width: 100%;
-  height: auto;
+  object-fit: cover;
 }
 .block {
   width: calc(100% - 40vw);
@@ -115,7 +112,6 @@ section {
 }
 .block-content {
   display: flex;
-  margin-top: 5vh;
 }
 .block-content > div {
   position: relative;
@@ -138,9 +134,6 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
-}
-.block-content > div > h3 {
-  text-align: justify;
 }
 .wrapper {
   display: inline;
