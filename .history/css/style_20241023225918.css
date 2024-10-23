@@ -1,28 +1,4 @@
 @charset "UTF-8";
-.char-image {
-    width: calc(100% / 4);
-    height: 50%;
-    background-image: linear-gradient(60deg, #222, #444);
-    position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
-    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
-    overflow: hidden;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-@media (min-width: 420px) {
-  .char-image {
-    width: calc(100% / 8);
-    height: 100%;
-    background-image: linear-gradient(60deg, #222, #444);
-    position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
-    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
-    overflow: hidden;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-}
 html {/*初期値の定義*/
   height: 100%;
   width: 100%;
@@ -132,6 +108,30 @@ main {
   align-content: center;
   overflow: hidden;
   padding: 20px 0;
+}
+@media (max-width: 420px) {
+  .char-image {
+      width: calc(100% / 4);
+      height: 50%;
+      background-image: linear-gradient(60deg, #222, #444);
+      position: relative;
+      -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+      clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+      overflow: hidden;
+      margin-top: 30px;
+  }
+}
+@media (min-width: 420px) {
+  .char-image {
+    width: calc(100% / 8);
+    height: 100%;
+    background-image: linear-gradient(60deg, #222, #444);
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    overflow: hidden;
+    margin-top: 30px;
+  }
 }
 .char-name {
   font-family: "Passion One", sans-serif;
