@@ -42,7 +42,7 @@ header {
   background-color: #fff;
   box-shadow: 0 0 7px gray;
   width: 100%;
-  height: calc(5vh + 100vw * 0.05);
+  height: calc(5vh + 100vw * 0.2);
   margin-bottom: 20px;
 }
 .separete-content {
@@ -56,31 +56,12 @@ header {
   text-align: left;
   vertical-align: middle;
 }
-.title-wrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.title {
-  margin: 0 0;
-  height: auto;
-  margin-left: 4vw;
-  font-size: calc(0.7em + 1.5vw);
-}
 .ex-site-link {
-  height: 100%;
-  display: inline-block;
-  align-content: center;
   margin-right: calc(10vw * 0.5 + 20px);
   text-align: right;
 }
 #empty-header-content {
   height: 100%;
-}
-.nav {
-  font-size: calc(0.2em + 0.75vw);
-  margin: 5% 0;
-  height: auto;
 }
 .src-icon {
   width: auto;
@@ -129,14 +110,14 @@ footer {
 }
 main {
   width: 100%;
-  height: calc(100% - 12vh - calc(5vh + 100vw * 0.05) - 40px);
+  height: calc(73vh - 40px);
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
 }
 #description {
   width: calc(100% - 20vw);
-  height: auto;
+  height: 15vh;
   margin: 0 10vw;
   display: inline;
   align-content: center;

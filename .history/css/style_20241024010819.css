@@ -136,7 +136,7 @@ main {
 }
 #description {
   width: calc(100% - 20vw);
-  height: auto;
+  height: 15vh;
   margin: 0 10vw;
   display: inline;
   align-content: center;

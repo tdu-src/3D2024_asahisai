@@ -78,7 +78,6 @@ header {
   height: 100%;
 }
 .nav {
-  font-size: calc(0.2em + 0.75vw);
   margin: 5% 0;
   height: auto;
 }
@@ -129,14 +128,14 @@ footer {
 }
 main {
   width: 100%;
-  height: calc(100% - 12vh - calc(5vh + 100vw * 0.05) - 40px);
+  height: calc(73vh - 40px);
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
 }
 #description {
   width: calc(100% - 20vw);
-  height: auto;
+  height: 15vh;
   margin: 0 10vw;
   display: inline;
   align-content: center;
