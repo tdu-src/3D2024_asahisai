@@ -23,22 +23,6 @@
     margin-bottom: 30px;
   }
 }
-@media (max-width: 48em) {
-  #if-width-big {
-    display: none;
-  }
-  #if-width-small {
-    display: inline-block;
-  }
-}
-@media (min-width: 48em) {
-  #if-width-small {
-    display: none;
-  }
-  #if-width-big {
-    display: inline-block;
-  }
-}
 html {/*初期値の定義*/
   height: 100%;
   width: 100%;
@@ -143,160 +127,135 @@ footer {
   height: 28px;
   margin: 0 4vw;
 }
-nav {
-  margin-right: calc(10vw* 0.5 + 20px);
-  position: relative;
+/* Nav items */
+.menu {
+  list-style: none;
+  position: absolute;
   width: 100%;
-  height: 100%;
-
-  @media screen and (max-width: 48em) {
-    nav {display: inline;}
-  }
-  
+  height: auto;
+  top: 0;
+  margin-top: 52px;
+  padding: 0 0 10px 0;
+  clear: both;
+  background: var(--background-navbar);
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  transform: scale(1, 0);
+  transform-origin: top;
 }
 
-.menu__box {
-  align-content: space-around;
-  flex-direction: row;
-  list-style-type: none;
-  
-  @media screen and (max-width: 48em) {
-    visibility: hidden;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(2 * (5vh + 100vw * 0.05));
-    margin-top: calc(-1 * (5vh + 100vw * 0.05));
-    padding-top: 0.6em;
-    padding-left: 0;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 0 7px gray;
-    z-index: 1;
-    transition-duration: 0.5s;
-  }
-
+/* Hamburger menu button */
+.menu-btn:checked ~ .menu {
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
 }
 
-.menu_item {
-  width: 100%;
-  height: 32%;
-  margin: 1% 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
-  font-size: 14px;
-  font-weight: 400;
+/* Hamburger menbu text */
+.menu a {
   text-decoration: none;
-  text-transform: uppercase;
-  
-  @media screen and (max-width: 48em) {
-    display: inline-block;
-    
-    font-size: 18px;
-    transition-duration: 0.5s;
-    
-  }
-}
-.menu_item:hover {
-  background-color: #ddd;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ddd;
+  opacity: 0;
+  transition: 0.5s;
 }
 
-.hidden-item {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
+.menu li {
+  border-top: 1px solid rgb(75, 75, 75);
+  padding: 15px 0;
+  margin: 0 54px;
   opacity: 0;
-  transition-duration: 0.5s;
-  width: 100%;
+  transition: 0.5s;
+}
+
+.menu-btn:checked ~ .menu a,
+.menu-btn:checked ~ .menu li {
+  opacity: 1;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.menu-icon {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 24px 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.navicon {
+  background: #ddd;
+  display: block;
+  height: 3px;
+  width: 26px;
+  position: relative;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+.navicon:before,
+.navicon:after {
+  content: "";
+  display: block;
   height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #ddd;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
 }
 
-#menu__toggle {
-  opacity: 0;
-  margin: 0;
-  width: calc(0.6 * (5vh + 100vw * 0.05));
-  height: calc(0.6 * (5vh + 100vw * 0.05));
-
-  &:checked ~ .menu__btn > span::before {
-    transform: rotate(45deg)  translateY(0);
-    background: #f06c64;
-  }
-
-  &:checked ~ .menu__btn > span::after {
-    transform: rotate(-45deg) translateY(0);
-    background: #f06c64;
-  }
-
-  &:checked ~ .menu__btn > span > div {
-    opacity: 0;
-  }
-
-  &:checked ~ .menu__box {
-    visibility: visible;
-    left: 0;
-    margin: 0;
-  }
-  
-  &:checked ~ .menu__box > .menu_item > .hidden-item {
-    opacity: 1;
-  }
-
+.navicon:before {
+  top: 9px;
 }
-.menu__btn {
-  transition-duration: 0.25s;
+
+.navicon:after {
+  bottom: 9px;
+}
+
+/* Hamburger Menu Animation Start */
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+  top: 0;
+}
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  bottom: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: rgba(0, 0, 0, 0);
+  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+/* Hamburger Menu Animation End */
+
+/* Navbar Container */
+.navtext-container {
+  width: 100%;
+  height: 52px;
+  position: absolute;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: translateY(calc(-0.6 * (5vh + 100vw * 0.05) - 8px));
-  cursor: pointer;
-  z-index: 2;
-  
-  @media screen and (min-width: 48em) {display: none;}
-
-}
-span {
-  position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
 }
-.menu__btn > span::before {
-  content: '';
-  display: inline-block;
+
+/* Navbar Text */
+.navtext {
   position: absolute;
-  width: calc(0.4 * (5vh + 100vw * 0.05));
-  height: 2px;
-  background-color: #000;
-  transform: rotate(0deg) translateY(calc(-0.15 * (5vh + 100vw * 0.05)));
-  transition-duration: 0.5s;
-}
-.menu__btn > span::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  width: calc(0.4 * (5vh + 100vw * 0.05));
-  height: 2px;
-  background-color: #000;
-  transform: rotate(0deg) translateY(calc(0.15 * (5vh + 100vw * 0.05)));
-  transition-duration: 0.5s;
-}
-.menu__btn > span > div {
-  opacity: 1;
-  display: inline-block;
-  position: absolute;
-  width: calc(0.4 * (5vh + 100vw * 0.05));
-  height: 2px;
-  background-color: #000;
-  transition-duration: 0.5s;
+  text-transform: uppercase;
+  color: #ddd;
+  letter-spacing: 4px;
+  font-size: 20px;
 }
 main {
   width: 100%;
@@ -305,11 +264,7 @@ main {
   flex-wrap: wrap;
   align-content: space-around;
 }
-h2 {
-  font-size: 1.2em;
-}
 #description {
-  font-size: calc(0.8vw + 6px);
   width: calc(100% - 20vw);
   height: auto;
   margin: 0 10vw;
