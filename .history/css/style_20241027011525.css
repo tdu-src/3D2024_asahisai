@@ -1,7 +1,8 @@
 @charset "UTF-8";
 html {/*初期値の定義*/
   height: 100%;
-  width: 100%;
+  width: 100vw; /* 古いブラウザのためのフォールバック */
+  width: 100cqw;
 }
 body {
   background-color: #fff;

@@ -89,6 +89,13 @@ section {
     padding-top: 60%;
   }
 }
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #555;
+}
 #download-content {
   margin-top: 3em;
 }
