@@ -194,7 +194,8 @@ nav {
   }
 .menu_item {
   width: 100%;
-  height: calc((1 * (5vh + 100vw * 0.05)) - 2%);
+  height: 32%;
+  margin: 1% 0;
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;

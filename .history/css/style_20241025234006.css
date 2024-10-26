@@ -10,7 +10,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-@media (min-width: 431px) {
+@media (min-width: 420px) {
   .char-image {
     width: calc(100% / 8);
     height: 100%;
@@ -26,7 +26,7 @@
     font-size: 6.8vh;
   }
 }
-@media (max-width: 431px) {
+@media (min-width: 420px) {
   .char-name {
     font-size: 3.5vh;
   }
@@ -64,14 +64,10 @@ body {
 }
 header {
   background-color: #fff;
+  box-shadow: 0 0 7px gray;
   width: 100%;
   height: calc(5vh + 100vw * 0.05);
   margin-bottom: 20px;
-  position: relative;
-  z-index: 2;
-  @media screen and (min-width: 48em) {
-    box-shadow: 0 0 7px gray;
-  }
 }
 .separete-content {
   height: 100%;
@@ -173,28 +169,29 @@ nav {
   list-style-type: none;
   
   @media screen and (max-width: 48em) {
-    visibility: visible;
+    visibility: hidden;
     flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(3 * (5vh + 100vw * 0.05));
-    margin-top: calc(-2 * (5vh + 100vw * 0.05));
+    height: calc(2 * (5vh + 100vw * 0.05));
+    margin-top: calc(-1 * (5vh + 100vw * 0.05));
+    padding-top: 0.6em;
     padding-left: 0;
     text-align: center;
     background-color: #fff;
     box-shadow: 0 0 7px gray;
-    z-index: -1;
+    z-index: 1;
     transition-duration: 0.5s;
   }
+
 }
-#first_item {
-  margin-top: calc(5vh + 100vw * 0.05);
-  }
+
 .menu_item {
   width: 100%;
-  height: calc((1 * (5vh + 100vw * 0.05)) - 2%);
+  height: 32%;
+  margin: 1% 0;
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
@@ -265,7 +262,7 @@ nav {
   position: absolute;
   width: calc(0.6 * (5vh + 100vw * 0.05));
   height: 100%;
-  transform: translateY(calc(-0.55 * (5vh + 100vw * 0.05) - 8px));
+  transform: translateY(calc(-0.6 * (5vh + 100vw * 0.05) - 8px));
   cursor: pointer;
   z-index: 2;
   

@@ -300,7 +300,7 @@ section {
   height: auto;
 }
 .block {
-  width: 60vw;
+  width: calc(100% - 40vw);
   margin-top: 2.5em;
   display: inline-block;
   align-content: space-around;
@@ -342,23 +342,6 @@ section {
   display: inline;
   align-content: center;
   overflow: auto;
-}
-@media (max-width: 550px) {
-  .block-content {
-    display: block;
-    width: 100%;
-    justify-items: center;
-  }
-  .block-content > div {
-    width: 80%;
-    padding-top: 80%;
-  }
-  h3 {
-    font-size: calc((0.8vw + 6px));
-  }
-  .block-content > div:nth-of-type(2) {
-    padding-top: 60%;
-  }
 }
 a {
   color: #000;
