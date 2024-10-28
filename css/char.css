@@ -1,3 +1,21 @@
+/*
+* 可読性向上のためcssは以下のようなルールを設ける。
+*
+* 命名規則：ケバブケース
+* 属性の書き込み順：
+*   画面サイズ width > height
+*   padding
+*   border
+*   margin
+*   position関連
+*   display/整列関連
+*   transform関連
+*   色情報関連
+*   フォント関連
+*   アニメーション関連
+*  【注意】これらのいずれにも属さないものは適宜判断すること。
+*/
+
 @charset "UTF-8";
 footer {
   bottom: auto;
@@ -7,10 +25,10 @@ main {
   display: inline-block;
   align-content: space-around;
 }
-h2 {
+.paragraph-title {
   font-size: calc((0.8vw + 6px) * 1.2);
 }
-h3 {
+.paragraph-content {
   font-size: calc((0.8vw + 6px) * 0.8);
 }
 section {
@@ -28,64 +46,64 @@ section {
   width: 100%;
   height: auto;
 }
-.block {
+.explain-content-wrapper {
   width: 60vw;
   margin-top: 2.5em;
   display: inline-block;
   align-content: space-around;
 }
-#block-first {
+#explain-content-first {
   margin-top: 0;
 }
-.block-content {
-  display: flex;
+.explain-content{
   margin-top: 2em;
+  display: flex;
   gap: 10%;
 }
-.block-content > div {
-  position: relative;
+.explain-content > div {
   width: 45%;
   height: 0;
   padding-top: 45%;
+  position: relative;
   overflow: hidden;
 }
-.block-content > div > img {
-  position: absolute;
+.explain-content > div > img {
   top: 50%;
   left: 50%;
+  position: absolute;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-.block-content > div > div {
-  position: absolute;
+.explain-content > div > div {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  position: absolute;
 }
-.block-content > div > h3 {
+.explain-content > div > h3 {
   text-align: justify;
 }
-.wrapper {
+.explain-content-sentence {
   display: inline;
   align-content: center;
   overflow: auto;
 }
 @media (max-width: 550px) {
-  .block-content {
-    display: block;
+  .explain-content {
     width: 100%;
+    display: block;
     justify-items: center;
   }
-  .block-content > div {
+  .explain-content > div {
     width: 80%;
     padding-top: 80%;
   }
-  h3 {
+  .paragraph-content {
     font-size: calc((0.8vw + 6px));
   }
-  .block-content > div:nth-of-type(2) {
+  .explain-content > div:nth-of-type(2) {
     padding-top: 60%;
   }
 }
@@ -93,11 +111,11 @@ section {
   margin-top: 3em;
 }
 #download-button {
-  box-shadow: 2px 2px 4px gray;
   padding: 1em 2em;
-  background-image: linear-gradient(60deg, #222, #444);
   border-radius: 1em;
   color: #fff;  
+  background-image: linear-gradient(60deg, #222, #444);
+  box-shadow: 2px 2px 4px gray;
 }
 #download-button:hover {
   box-shadow: 0px 0px 1px gray;
