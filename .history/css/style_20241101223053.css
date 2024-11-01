@@ -27,14 +27,10 @@ body {
   margin: 0px;
   position: relative;
   background-color: #fff;
-  color: #000;
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
-svg > g {
-  fill: #000;
 }
 /*header*/
 header {
@@ -559,10 +555,6 @@ main {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #000;
-    color: #fff;
-  }
-  svg > g {
-    fill: #fff;
   }
   header {
     background-color: #000;
@@ -587,9 +579,6 @@ main {
   }
   footer {
     background-color: #000;
-  }
-  .char-image {
-      background-image: linear-gradient(60deg, #ddd, #bbb);
   }
   .char-name {
     color: #000;

@@ -33,7 +33,7 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-svg > g {
+svg {
   fill: #000;
 }
 /*header*/
@@ -561,7 +561,7 @@ main {
     background-color: #000;
     color: #fff;
   }
-  svg > g {
+  svg {
     fill: #fff;
   }
   header {

@@ -27,14 +27,10 @@ body {
   margin: 0px;
   position: relative;
   background-color: #fff;
-  color: #000;
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
-svg > g {
-  fill: #000;
 }
 /*header*/
 header {
@@ -316,11 +312,6 @@ footer {
     height: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
-    -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
-    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
-    position: relative;
-    overflow: hidden;
-    background-image: linear-gradient(60deg, #222, #444);
 }
 main {
   width: 100%;
@@ -549,8 +540,6 @@ main {
   .char-image {
     width: calc(100% / 8);
     height: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
   }
   .char-name {
     font-size: 6.8vh;
@@ -559,10 +548,6 @@ main {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #000;
-    color: #fff;
-  }
-  svg > g {
-    fill: #fff;
   }
   header {
     background-color: #000;
@@ -587,9 +572,6 @@ main {
   }
   footer {
     background-color: #000;
-  }
-  .char-image {
-      background-image: linear-gradient(60deg, #ddd, #bbb);
   }
   .char-name {
     color: #000;

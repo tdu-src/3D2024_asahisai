@@ -33,9 +33,6 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-svg > g {
-  fill: #000;
-}
 /*header*/
 header {
   width: 100%;
@@ -559,10 +556,6 @@ main {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #000;
-    color: #fff;
-  }
-  svg > g {
-    fill: #fff;
   }
   header {
     background-color: #000;
