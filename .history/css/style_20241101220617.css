@@ -51,17 +51,12 @@ header {
   justify-content: space-around;
 }
 .header-content {
-  width: auto;
   height: 60%;
+  width: auto;
   margin: calc((5vh + 100vw * 0.05) * 0.2) 0;
   display: inline-block;
   text-align: left;
   vertical-align: middle;
-}
-.header-rogo-title-block {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
 }
 .title-wrapper {
   height: 100%;

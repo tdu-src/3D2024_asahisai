@@ -59,9 +59,7 @@ header {
   vertical-align: middle;
 }
 .header-rogo-title-block {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
+  
 }
 .title-wrapper {
   height: 100%;

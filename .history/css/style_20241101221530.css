@@ -48,6 +48,7 @@ header {
 .header-content-wrapper {
   height: 100%;
   display: flex;
+  display: -webkit-flexbox;
   justify-content: space-around;
 }
 .header-content {
@@ -57,11 +58,6 @@ header {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
-}
-.header-rogo-title-block {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
 }
 .title-wrapper {
   height: 100%;
