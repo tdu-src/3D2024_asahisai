@@ -1,0 +1,615 @@
+/*
+* 可読性向上のためcssは以下のようなルールを設ける。
+*
+* 命名規則：ケバブケース
+* 属性の書き込み順：
+*   画面サイズ width > height
+*   padding
+*   border
+*   margin
+*   position関連
+*   display/整列関連
+*   transform関連
+*   色情報関連
+*   フォント関連
+*   アニメーション関連
+*  【注意】これらのいずれにも属さないものは適宜判断すること。
+*/
+
+@charset "UTF-8";
+html {/*初期値の定義*/
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  position: relative;
+  background-color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/*header*/
+header {
+  width: 100%;
+  height: calc(5vh + 100vw * 0.05);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  box-shadow: 0 0 7px gray;
+  @media screen and (min-width: 48em) {
+    box-shadow: 0 0 7px gray;
+  }
+}
+.header-content-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.header-content {
+  width: auto;
+  height: 60%;
+  margin: calc((5vh + 100vw * 0.05) * 0.2) 0;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.header-rogo-title-block {
+  
+}
+.title-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.title {
+  height: auto;
+  margin: 0 0;
+  margin-left: 4vw;
+  font-size: calc(0.7em + 1.5vw);
+}
+#display-width-big {
+  display: none;
+}
+#display-width-small {
+  display: inline-block;
+}
+@media (min-width: 48em) {
+  #display-width-small {
+    display: none;
+  }
+  #display-width-big {
+    display: inline-block;
+  }
+}
+.ex-site-link-wrapper {
+  height: 100%;
+  margin-right: calc(10vw * 0.5 + 20px);
+  display: inline-block;
+  text-align: right;
+  align-content: center;
+}
+.ex-site-link {
+  height: auto;
+  margin: 5% 0;
+  font-size: calc(0.2em + 0.75vw);
+}
+.src-icon {
+  width: auto;
+  height: 100%;
+  margin-left: calc(10vw * 0.5 + 20px);
+}
+g {
+  fill: #000;
+}
+nav {
+  width: 100%;
+  height: 100%;
+  margin-right: calc(10vw* 0.5 + 20px);
+  position: relative;
+
+  @media screen and (max-width: 48em) {
+    nav {display: inline;}
+  }
+  
+}
+.menu-box {
+  align-content: space-around;
+  flex-direction: row;
+  list-style-type: none;
+  
+  @media screen and (max-width: 48em) {
+    visibility: hidden;
+    width: 100%;
+    height: calc(3 * (5vh + 100vw * 0.05));
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    margin-top: calc(-2 * (5vh + 100vw * 0.05));
+    position: fixed;
+    z-index: -1;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 7px gray;
+    transition-duration: 0.5s;
+  }
+}
+#first-item {
+  margin-top: calc(5vh + 100vw * 0.05);
+  }
+.menu-item {
+  width: 100%;
+  height: calc((1 * (5vh + 100vw * 0.05)) - 2%);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  @media screen and (max-width: 48em) {
+    display: inline-block;
+    font-size: 18px;
+    transition-duration: 0.5s;
+  }
+}
+.menu-item:hover {
+  background-color: #ddd;
+}
+
+.hidden-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+#menu-toggle {
+  width: calc(0.6 * (5vh + 100vw * 0.05));
+  height: calc(0.6 * (5vh + 100vw * 0.05));
+  margin: 0;
+  opacity: 0;
+
+  &:checked ~ .menu-btn > span::before {
+    transform: rotate(45deg)  translateY(0);
+    background: #f06c64;
+  }
+
+  &:checked ~ .menu-btn > span::after {
+    transform: rotate(-45deg) translateY(0);
+    background: #f06c64;
+  }
+
+  &:checked ~ .menu-btn > span > div {
+    opacity: 0;
+  }
+
+  &:checked ~ .menu-box {
+    visibility: visible;
+    left: 0;
+    margin: 0;
+  }
+  
+  &:checked ~ .menu-box > .menu-item > .hidden-item {
+    opacity: 1;
+  }
+
+}
+.menu-btn {
+  width: calc(0.6 * (5vh + 100vw * 0.05));
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  transform: translateY(calc(-0.55 * (5vh + 100vw * 0.05) - 8px));
+  z-index: 2;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  
+  @media screen and (min-width: 48em) {
+    display: none;
+  }
+
+}
+span {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-btn > span::before {
+  content: '';
+  width: calc(0.4 * (5vh + 100vw * 0.05));
+  height: 2px;
+  position: absolute;
+  display: inline-block;
+  transform: rotate(0deg) translateY(calc(-0.15 * (5vh + 100vw * 0.05)));
+  background-color: #000;
+  transition-duration: 0.5s;
+}
+.menu-btn > span::after {
+  content: '';
+  width: calc(0.4 * (5vh + 100vw * 0.05));
+  height: 2px;
+  position: absolute;
+  display: inline-block;
+  transform: rotate(0deg) translateY(calc(0.15 * (5vh + 100vw * 0.05)));
+  background-color: #000;
+  transition-duration: 0.5s;
+}
+.menu-btn > span > div {
+  width: calc(0.4 * (5vh + 100vw * 0.05));
+  height: 2px;
+  display: inline-block;
+  position: absolute;
+  background-color: #000;
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+a {
+  color: #000;
+  text-decoration: none
+}
+a:hover {
+  color: #555;
+}
+/*footer*/
+footer {
+  width: 100%;
+  height: 12vh;
+  bottom: 0px;
+  margin-top: 20px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 7px gray;
+}
+.footer-content {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+#cpyright {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(0.8vw + 3px);
+}
+.sns-links {
+  display: flex;
+  justify-content: center;
+}
+.sns-icon {
+  width: 25px;
+  height: 25px;
+}
+#mid-icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 4vw;
+}
+/*body*/
+.char-image {
+    width: calc(100% / 4);
+    height: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(60deg, #222, #444);
+}
+main {
+  width: 100%;
+  height: calc(100% - 12vh - calc(5vh + 100vw * 0.05) - 40px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+.description > h2 {
+  font-size: 1.2em;
+}
+.description {
+  width: calc(100% - 20vw);
+  height: auto;
+  margin: 0 10vw;
+  display: inline;
+  align-content: center;
+  font-size: calc(0.8vw + 6px);
+}
+.char-images {
+  width: 100%;
+  height: 40vh;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  overflow: hidden;
+}
+.char-name {
+  bottom: 0.2em;
+  left: -0.2em;
+  position: absolute;
+  z-index: 10;
+  color: #fff;
+  writing-mode: vertical-rl;
+  font-family: "Passion One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3.5vh;
+}
+.char-image > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+#Scout > img:nth-of-type(1){
+  object-position: 55% 0%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Scout > img:nth-of-type(2) {
+  object-position: 50% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Nere > img:nth-of-type(1){
+  object-position: 58% 20%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Nere > img:nth-of-type(2) {
+  object-position: 50% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Fuko > img:nth-of-type(1){
+  object-position: 40% 0%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Fuko > img:nth-of-type(2) {
+  object-position: 60% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Wakatsuki > img:nth-of-type(1){
+  object-position: 60% 0%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Wakatsuki > img:nth-of-type(2) {
+  object-position: 50% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Tsukuri > img:nth-of-type(1){
+  object-position: 60% 0%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Tsukuri > img:nth-of-type(2) {
+  object-position: 43% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Serif > img:nth-of-type(1){
+  object-position: 45% 0%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Serif > img:nth-of-type(2) {
+  object-position: 50% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Isago > img:nth-of-type(1){
+  object-position: 45% 0%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Isago > img:nth-of-type(2) {
+  object-position: 50% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Memori > img:nth-of-type(1){
+  object-position: 30% 0%;
+  animation-name: slideAnime1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+#Memori > img:nth-of-type(2) {
+  object-position: 50% 0%;
+  z-index: -3;
+  filter: drop-shadow(3px 3px 3px #000);
+  opacity: 0;
+  animation-name: slideAnime2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.char-image:hover {
+  animation-name: slideAnime3;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+/*window size switch*/
+@media (min-width: 48em) {
+  .char-image {
+    width: calc(100% / 8);
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(60deg, #222, #444);
+  }
+  .char-name {
+    font-size: 6.8vh;
+  }
+}
+/*animation*/
+@keyframes slideAnime1 {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  51% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  89% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  90% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideAnime2 {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+@keyframes slideAnime3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
