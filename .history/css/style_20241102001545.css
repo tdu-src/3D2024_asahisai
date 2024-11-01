@@ -369,7 +369,7 @@ main {
   object-fit: cover;
 }
 #Scout > img:nth-of-type(1){
-  object-position: 52% 0%;
+  object-position: 50% 0%;
   animation-name: slideAnime1;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -474,7 +474,7 @@ main {
   animation-timing-function: ease-in-out;
 }
 #Serif > img:nth-of-type(1){
-  object-position: 50% 0%;
+  object-position: 45% 0%;
   animation-name: slideAnime1;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -495,7 +495,7 @@ main {
   animation-timing-function: ease-in-out;
 }
 #Isago > img:nth-of-type(1){
-  object-position: 60% 0%;
+  object-position: 45% 0%;
   animation-name: slideAnime1;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -516,7 +516,7 @@ main {
   animation-timing-function: ease-in-out;
 }
 #Memori > img:nth-of-type(1){
-  object-position: 55% 0%;
+  object-position: 30% 0%;
   animation-name: slideAnime1;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -525,7 +525,7 @@ main {
   animation-timing-function: ease-in-out;
 }
 #Memori > img:nth-of-type(2) {
-  object-position: 25% 0%;
+  object-position: 50% 0%;
   z-index: -3;
   filter: drop-shadow(3px 3px 3px #000);
   opacity: 0;

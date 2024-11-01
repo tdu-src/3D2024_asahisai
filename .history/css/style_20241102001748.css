@@ -369,7 +369,7 @@ main {
   object-fit: cover;
 }
 #Scout > img:nth-of-type(1){
-  object-position: 52% 0%;
+  object-position: 50% 0%;
   animation-name: slideAnime1;
   animation-duration: 20s;
   animation-iteration-count: infinite;
