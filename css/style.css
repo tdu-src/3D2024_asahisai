@@ -576,6 +576,9 @@ main {
   header {
     background-color: #000;
   }
+  .menu-box {
+    background-color: #000;
+  }
   .menu-item:hover {
     background-color: #222;
   }
