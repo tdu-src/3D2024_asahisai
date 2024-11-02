@@ -29,8 +29,7 @@ window.addEventListener('touchmove', (e) =>  {
 window.addEventListener('touchend', (e) =>  {
     const distanceY = Math.abs(endY - startY)
 
-    // 上下のスワイプ距離の方が左右より長い && 小さなスワイプは検知しないようにする
-    if (distanceX < distanceY && distanceY > minimumDistance) {
+    if (distanceY > minimumDistance) {
         // スワイプ後の動作
         checkBoxObject.checked = false;
     }
